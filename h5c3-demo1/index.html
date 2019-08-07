@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>太极图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #ccc;
+    }
+
+    /* 改变盒子模型
+    body {
+      box-sizing: border-box;
+    } */
+    /* 使用flex布局实现水平垂直居中 */
+    #container {
+      /* 可视范围的高度 */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 内容默认是一字排开flex-direction: row，可以使用flex-direction */
+      flex-direction: column;
+    }
+
+    #father {
+      /* border: 1px solid black; */
+      width: 400px;
+      height: 400px;
+      border-radius: 200px;
+      position: relative;
+      background-color: pink;
+      /* 超出父盒子的内容隐藏掉 */
+      overflow: hidden;
+    }
+
+    #father>div:first-child {
+      /* border: 10px solid black; */
+      width: 50%;
+      height: 100%;
+      background-color: white;
+      position: absolute;
+      left: 0;
+    }
+
+    #father>div:nth-child(2) {
+      /* border: 1px solid red; */
+      width: 50%;
+      height: 100%;
+      background-color: black;
+      position: absolute;
+      right: 0;
+    }
+
+    #father>div:nth-child(3) {
+      /* border: 10px solid red; */
+      width: 200px;
+      height: 200px;
+      background-color: black;
+      position: absolute;
+      left: 50%;
+      /* 水平居中 */
+      margin-left: -100px;
+      border-radius: 150px;
+    }
+
+    #father>div:nth-child(4) {
+      /* border: 10px solid red; */
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      /* 水平居中 */
+      margin-left: -100px;
+      border-radius: 150px;
+    }
+
+    #father>div:nth-child(5) {
+      /* border: 10px solid blue; */
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+      left: 50%;
+      top: 75px;
+      margin-left: -25px;
+      background-color: white;
+    }
+
+    #father>div:nth-child(6) {
+      /* border: 10px solid blue; */
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+      left: 50%;
+      top: 275px;
+      margin-left: -25px;
+      background-color: black;
+    }
+
+    #footer {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="father">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <!-- 两个小圆 -->
+      <div></div>
+      <div></div>
+    </div>
+    <div id="footer">
+      道可道，非常道
+    </div>
+  </div>
+</body>
+
+</html>
